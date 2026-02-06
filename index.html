@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seven Restaurant | Benin City</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+body{font-family:'Roboto',sans-serif;color:#333;background:#fafafa;line-height:1.6;}
+a{text-decoration:none;color:inherit;}
+.container{max-width:1200px;margin:auto;padding:0 20px;}
+
+/* NAV */
+nav{
+  position:fixed;top:0;width:100%;
+  background:rgba(0,0,0,.7);
+  display:flex;justify-content:center;
+  z-index:999;
+}
+nav a{color:#fff;margin:15px 25px;font-weight:bold;}
+nav a:hover{color:#d4af37;}
+
+/* HERO */
+#hero{
+  position:relative;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+  overflow:hidden;
+}
+.video-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+}
+.video-bg iframe{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  pointer-events:none;
+}
+#hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  z-index:1;
+}
+#hero .content{
+  position:relative;
+  z-index:2;
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+#hero.active .content{
+  opacity:1;
+  transform:translateY(0);
+}
+#hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:4rem;
+  margin-bottom:20px;
+}
+#hero p{font-size:1.5rem;margin-bottom:30px;}
+.btn{
+  background:#d4af37;
+  padding:15px 30px;
+  border-radius:50px;
+  font-weight:bold;
+}
+.btn:hover{background:#b88b2f;}
+
+/* SECTIONS */
+section{
+  padding:80px 0;
+  opacity:0;
+  transform:translateY(40px);
+  transition:.8s;
+}
+section.active{
+  opacity:1;
+  transform:translateY(0);
+}
+h2{
+  font-family:'Playfair Display',serif;
+  font-size:2.5rem;
+  text-align:center;
+  margin-bottom:40px;
+}
+
+/* ABOUT */
+.about{display:flex;gap:40px;flex-wrap:wrap;align-items:center;}
+.about img{flex:1 1 400px;border-radius:10px;}
+.about .text{flex:1 1 400px;}
+
+/* MENU */
+.menu-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+.menu-item{
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+.menu-item img{
+  width:100%;
+  border-radius:10px;
+  margin-top:10px;
+}
+
+/* REVIEWS */
+.testimonials{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:20px;
+}
+.testimonial{
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+.testimonial span{color:#d4af37;font-weight:bold;}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+}
+.gallery img{width:100%;border-radius:10px;}
+
+/* CONTACT */
+.contact{text-align:center;}
+.contact a{color:#d4af37;font-weight:bold;}
+
+/* WHATSAPP */
+.whatsapp-btn{
+  position:fixed;
+  bottom:30px;right:30px;
+  background:#25D366;
+  color:#fff;
+  padding:15px 20px;
+  border-radius:50px;
+  font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+  background:#333;
+  color:#fff;
+  text-align:center;
+  padding:30px;
+}
+
+@media(max-width:768px){
+  #hero h1{font-size:3rem;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#hero">Home</a>
+  <a href="#about">About</a>
+  <a href="#menu">Menu</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<header id="hero">
+  <div class="video-bg">
+    <iframe 
+      src="https://streamable.com/e/dxa4de?autoplay=1&muted=1&loop=1&controls=0"
+      frameborder="0"
+      allow="autoplay; fullscreen">
+    </iframe>
+  </div>
+
+  <div class="content">
+    <h1>Seven Restaurant</h1>
+    <p>Fine Dining & Photogenic Ambience in Benin City</p>
+    <a class="btn" href="#contact">Book via WhatsApp</a>
+  </div>
+</header>
+
+<section id="about" class="container about">
+  <img src="https://images.unsplash.com/photo-1541542684-16ed48d8e0b6?fit=crop&w=800&q=80">
+  <div class="text">
+    <h2>About Seven Restaurant</h2>
+    <p>Seven Restaurant is known for its serene, photogenic ambience and fine dining experience in Benin City.</p>
+  </div>
+</section>
+
+<section id="menu" class="container">
+<h2>Full Menu</h2>
+<div class="menu-grid">
+  <div class="menu-item"><h3>French Fries</h3><img src="https://i.ibb.co/LXGLdpNG/Screenshot-20260206-131928-1.jpg"></div>
+  <div class="menu-item"><h3>Currysauce</h3><img src="https://i.ibb.co/bjWwm44k/Screenshot-20260206-131921-1.jpg"></div>
+  <div class="menu-item"><h3>Seafoods: Okro and Pounded Yam</h3><img src="https://i.ibb.co/QjjwYNGY/Screenshot-20260206-131937-1.jpg"></div>
+  <div class="menu-item"><h3>Nkwobi</h3><img src="https://i.ibb.co/ksBRFGQR/63cb36b14da728e164cc16dca1dee20f.jpg"></div>
+  <div class="menu-item"><h3>Banga Soup and Starch</h3><img src="https://i.ibb.co/chvTDJ3L/Screenshot-20260206-131944-1.jpg"></div>
+</div>
+</section>
+
+<section id="reviews" class="container">
+<h2>Customer Reviews</h2>
+<div class="testimonials">
+  <div class="testimonial">
+    <p>"Courteous staff, amazing food and fair prices."</p>
+    <span>- Ibrahim Salawu</span>
+  </div>
+  <div class="testimonial">
+    <p>"Nice ambience and amazing meals."</p>
+    <span>- Edith Aiyede</span>
+  </div>
+</div>
+</section>
+
+<section id="gallery" class="container">
+<h2>Gallery</h2>
+<div class="gallery">
+<img src="https://i.ibb.co/cjkzcHQ/Screenshot-20260206-143424-1.jpg">
+<img src="https://i.ibb.co/zHZJKXLt/Screenshot-20260206-143512-1.jpg">
+<img src="https://i.ibb.co/60nNYmRR/Screenshot-20260206-143501-1.jpg">
+<img src="https://i.ibb.co/bMcWQvpy/Screenshot-20260206-143452-1.jpg">
+<img src="https://i.ibb.co/jZLkNYSY/Screenshot-20260206-143439-1.jpg">
+<img src="https://i.ibb.co/bgGK3CS5/Screenshot-20260206-143432-1.jpg">
+</div>
+</section>
+
+<section id="contact" class="container contact">
+<h2>Contact & Location</h2>
+<p>📍 36a 1st Ugbor Road, Oka, Benin City</p>
+<p>📞 <a href="tel:+2349051370407">0905 137 0407</a></p>
+<p>💬 <a href="https://wa.me/2349051370407">WhatsApp Us</a></p>
+</section>
+
+<a class="whatsapp-btn" href="https://wa.me/2349051370407">Book via WhatsApp</a>
+
+<footer>
+© 2026 Seven Restaurant · Open till 10 PM
+</footer>
+
+<script>
+window.addEventListener('load',()=>document.getElementById('hero').classList.add('active'));
+const sections=document.querySelectorAll('section');
+window.addEventListener('scroll',()=>{
+  sections.forEach(s=>{
+    if(s.getBoundingClientRect().top<window.innerHeight-100){
+      s.classList.add('active');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
